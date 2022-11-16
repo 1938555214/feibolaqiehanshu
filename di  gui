@@ -1,0 +1,31 @@
+#include<stdio.h>
+
+int fbnq(int n)
+{
+    if (n == 1 || n == 2)
+    {
+        return 1;
+    }
+    else
+    {
+        return fbnq(n - 1) + fbnq(n - 2);
+    }
+}
+
+int main()
+{
+    int n;
+    int sum = 0;
+
+    printf("请输入求前几项斐波那契数列:");
+    scanf_s("%d", &n);
+
+    for (int i = 1; i <= n; i++)
+    {
+        sum += fbnq(i);
+    }
+
+    printf("\n前%d项和sum=%d\n", n, sum);
+
+    return 0;
+}
